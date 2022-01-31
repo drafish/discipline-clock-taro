@@ -1,0 +1,9 @@
+{
+  "miniprogramRoot": "./",
+  "projectname": "discipline-clock-fe",
+  "appid": "testAppId",
+  "setting": {
+    "es6": false,
+    "minified": false
+  }
+}
