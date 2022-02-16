@@ -25,14 +25,14 @@ export default (url: string, options: {}) => {
     }
     if (res.data.code === 'NOT_LOGIN') {
       showToast({
-        title: '您已登出，请重新登录',
+        title: '请重新登录',
         icon: 'error',
       });
       global.store.dispatch({ type: 'user/logout' });
       return res.data;
     }
     if (res.data.code !== 'SUCCESS') {
-      showToast({ title: res.data.msg, icon: 'error' });
+      showToast({ title: res.data.msg || 'response error', icon: 'error' });
     }
     return res.data;
   });
