@@ -1,7 +1,7 @@
 import { resolve } from 'path';
 
 const config = {
-  projectName: 'discipline-clock-fe',
+  projectName: 'discipline-clock-taro',
   date: '2022-1-31',
   designWidth: 750,
   deviceRatio: {

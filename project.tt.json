@@ -1,6 +1,6 @@
 {
   "miniprogramRoot": "./",
-  "projectname": "discipline-clock-fe",
+  "projectname": "discipline-clock-taro",
   "appid": "testAppId",
   "setting": {
     "es6": false,

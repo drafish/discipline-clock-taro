@@ -1,6 +1,6 @@
 {
   "miniprogramRoot": "./dist",
-  "projectname": "discipline-clock-fe",
+  "projectname": "discipline-clock-taro",
   "description": "",
   "appid": "wx6b1267729086516b",
   "setting": {
