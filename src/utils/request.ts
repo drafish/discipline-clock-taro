@@ -32,7 +32,7 @@ export default (url: string, options: {}) => {
       return res.data;
     }
     if (res.data.code !== 'SUCCESS') {
-      showToast({ title: res.data.msg || 'response error', icon: 'error' });
+      showToast({ title: res.data.msg || 'response error', icon: 'none' });
     }
     return res.data;
   });
