@@ -101,7 +101,7 @@ const Modal: ModelType = {
           },
         });
         removeStorageSync('userInfo');
-        redirectTo({ url: '/pages/user/login/index' });
+        redirectTo({ url: '/pages/user/index' });
       }
       return resp;
     },
