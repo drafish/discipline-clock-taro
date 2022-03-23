@@ -1,9 +1,10 @@
 import { Component } from 'react';
-import { navigateBack, showToast } from '@tarojs/taro';
+import { showToast } from '@tarojs/taro';
 import { View } from '@tarojs/components';
 import { Stepper, Button, Form, FormItem } from '@antmjs/vantui';
 import { IFormInstanceAPI } from '@antmjs/vantui/types/form';
 import { connect } from 'react-redux';
+import CustomTabbar from '@/components/CustomTabbar';
 import dayjs from 'dayjs';
 import { Dispatch, ConnectState } from '@/models/connect';
 import PopupPicker from '@/components/PopupPicker';
@@ -16,6 +17,20 @@ interface PropsType {
 
 class Index extends Component<PropsType> {
   form: IFormInstanceAPI;
+
+  onShareAppMessage() {
+    return {
+      title: '六部曲打卡',
+      path: '/pages/record/create/index',
+    };
+  }
+
+  onShareTimeline() {
+    return {
+      title: '六部曲打卡',
+      path: '/pages/record/create/index',
+    };
+  }
 
   render() {
     const { loading } = this.props;
@@ -94,9 +109,10 @@ class Index extends Component<PropsType> {
             <Button type='info' formType='submit' loading={loading}>
               提交
             </Button>
-            <Button onClick={() => navigateBack()}>返回</Button>
+            {/* <Button onClick={() => navigateBack()}>返回</Button> */}
           </View>
         </Form>
+        <CustomTabbar url='/pages/record/create/index' />
       </View>
     );
   }

@@ -1,8 +1,8 @@
 export default defineAppConfig({
   pages: [
+    'pages/record/create/index',
     'pages/record/list/index',
     'pages/record/detail/index',
-    'pages/record/create/index',
     'pages/record/update/index',
     'pages/user/index',
     'pages/user/login/index',

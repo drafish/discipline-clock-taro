@@ -1,4 +1,5 @@
 import { Component } from 'react';
+import { showLoading, hideLoading } from '@tarojs/taro';
 import { View, Text } from '@tarojs/components';
 import { PowerScrollView, Cell, Tag } from '@antmjs/vantui';
 import { connect } from 'react-redux';
@@ -11,12 +12,30 @@ interface PropsType {
   pageList: ConnectState['record']['list'];
 }
 class Index extends Component<PropsType> {
-  componentDidMount() {
-    this.refresh();
+  async componentDidMount() {
+    showLoading({
+      title: '加载中',
+    });
+    await this.refresh();
+    hideLoading();
+  }
+
+  onShareAppMessage() {
+    return {
+      title: '六部曲大厅',
+      path: '/pages/record/list/index',
+    };
+  }
+
+  onShareTimeline() {
+    return {
+      title: '六部曲大厅',
+      path: '/pages/record/list/index',
+    };
   }
 
   refresh = async () => {
-    this.props.dispatch({
+    await this.props.dispatch({
       type: 'record/refresh',
       payload: { pageNum: 1, pageSize: 20 },
     });
@@ -73,7 +92,7 @@ class Index extends Component<PropsType> {
             />
           ))}
         </PowerScrollView>
-        <CustomTabbar active={0} url='/pages/user/index' />
+        <CustomTabbar url='/pages/record/list/index' />
       </View>
     );
   }

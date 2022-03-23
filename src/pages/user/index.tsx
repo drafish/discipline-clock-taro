@@ -45,7 +45,7 @@ class Index extends Component<PropsType> {
                 });
               }}
             />
-            <Button
+            {/* <Button
               className={styles.button}
               type='info'
               block
@@ -54,7 +54,7 @@ class Index extends Component<PropsType> {
               }}
             >
               打卡
-            </Button>
+            </Button> */}
           </>
         ) : (
           <>
@@ -105,7 +105,7 @@ class Index extends Component<PropsType> {
             )}
           </>
         )}
-        <CustomTabbar active={1} url='/pages/record/list/index' />
+        <CustomTabbar url='/pages/user/index' />
       </View>
     );
   }
