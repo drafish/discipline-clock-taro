@@ -34,3 +34,10 @@ export const detail = (values: any) => {
     data: values,
   });
 };
+
+export const month = (values: any) => {
+  return request('/record/month', {
+    method: 'GET',
+    data: values,
+  });
+};

@@ -6,6 +6,7 @@ import * as record from '../services/record';
 export interface StateType {
   list: PageList;
   detail: { [key: string]: any };
+  month: string[];
 }
 
 export interface ModelType {
@@ -18,6 +19,7 @@ export interface ModelType {
     refresh: Effect;
     loadMore: Effect;
     detail: Effect;
+    month: Effect;
   };
   reducers: {
     save: Reducer<StateType>;
@@ -34,6 +36,7 @@ const Modal: ModelType = {
       list: [],
     },
     detail: {},
+    month: [],
   },
   effects: {
     *update({ payload }) {
@@ -94,6 +97,15 @@ const Modal: ModelType = {
         yield put({
           type: 'save',
           payload: { detail: res.detail },
+        });
+      }
+    },
+    *month({ payload }, { put }) {
+      const res = yield record.month(payload);
+      if (res.code === 'SUCCESS') {
+        yield put({
+          type: 'save',
+          payload: { month: res.detail },
         });
       }
     },
